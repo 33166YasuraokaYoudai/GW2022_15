@@ -10,22 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CdSearchSystem {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// BookMark.xaml の相互作用ロジック
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class BookMark : Window {
+        public BookMark() {
             InitializeComponent();
         }
 
-        private void btTitle_Click(object sender, RoutedEventArgs e) {
-            Window1 window = new Window1();
-            window.Show();
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            Window2 window2 = new Window2();
+            window2.Show();
             this.Close();
+
         }
     }
 }

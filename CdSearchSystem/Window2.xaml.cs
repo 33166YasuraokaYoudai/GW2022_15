@@ -14,34 +14,29 @@ using System.Windows.Shapes;
 
 namespace CdSearchSystem {
     /// <summary>
-    /// Window1.xaml の相互作用ロジック
+    /// Window2.xaml の相互作用ロジック
     /// </summary>
-    public partial class Window1 : Window {
-        public Window1() {
-
+    public partial class Window2 : Window {
+        public Window2() {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-           
-            if(tbId.Text == "1111" && tbPass.Password == "5555") {
-                Window2 window2 = new Window2();
-                window2.Show();
-                this.Close();
-            } else {
-                MessageBox.Show("パスワード又はIDが違います");
-                tbId.Clear();
-                tbPass.Clear();
-            }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e) {
-            MainWindow main = new MainWindow();
-            main.Show();
+            Serch serch = new Serch();
+            serch.Show();
             this.Close();
         }
 
-       
-        
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+            BookMark book = new BookMark();
+            book.Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e) {
+            Window1 window1 = new Window1();
+            window1.Show();
+            this.Close();
+        }
     }
 }
