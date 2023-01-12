@@ -7,7 +7,33 @@
         mc:Ignorable="d"
         Title="Serch" Height="450" Width="800">
     <Grid>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="305,242,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button  Content="戻る" HorizontalAlignment="Left" Margin="26,365,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label  Content="アーティスト名" FontSize="15" HorizontalAlignment="Left" Margin="47,53,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label Content="タイトル" FontSize="15" HorizontalAlignment="Left" Margin="50,86,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label  Content="発売元名" FontSize="15" HorizontalAlignment="Left" Margin="47,119,0,0" VerticalAlignment="Top"/>
+        <Label  Content="JANコード" FontSize="15" HorizontalAlignment="Left" Margin="50,152,0,0" VerticalAlignment="Top"/>
 
+        <TextBox x:Name="artistName" FontSize="15" HorizontalAlignment="Left" Height="36" Margin="168,45,0,0" VerticalAlignment="Top" Width="217" TextWrapping="Wrap"/>
+        <TextBox  x:Name="title" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="168,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="label" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="168,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="jan" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="168,152,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="217"/>
+
+        <Button Content="検索" HorizontalAlignment="Left" Margin="168,198,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="クリア" HorizontalAlignment="Left" Margin="281,198,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        
+        
+        <DataGrid HorizontalAlignment="Left" Height="162" Margin="109,235,0,0" VerticalAlignment="Top" Width="570">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="アーティスト名" Binding="{Binding}"/>
+                <DataGridTextColumn Header="タイトル" Binding="{Binding}"/>
+                <DataGridTextColumn Header="発売元" Binding="{Binding}"/>
+                <DataGridTextColumn Header="JANコード" Binding="{Binding}"/>
+
+
+
+            </DataGrid.Columns>
+
+            
+        </DataGrid>
     </Grid>
 </Window>

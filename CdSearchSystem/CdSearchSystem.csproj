@@ -68,6 +68,8 @@
     <Compile Include="BookMark.xaml.cs">
       <DependentUpon>BookMark.xaml</DependentUpon>
     </Compile>
+    <Compile Include="json.cs" />
+    <Compile Include="searchContents.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>

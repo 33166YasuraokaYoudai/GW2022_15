@@ -26,5 +26,12 @@ namespace CdSearchSystem {
             window2.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+            artistName.Clear();
+            title.Clear();
+            label.Clear();
+            jan.Clear();
+        }
     }
 }
