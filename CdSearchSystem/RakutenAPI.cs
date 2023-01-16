@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CdSearchSystem {
-    class json {
+
+    class RakutenAPI {
+
 
         public class Rootobject {
             public object[] GenreInformation { get; set; }
-            public Item[] Items { get; set; }
+            public Items[] Items { get; set; }
             public int carrier { get; set; }
             public int count { get; set; }
             public int first { get; set; }
@@ -19,11 +21,11 @@ namespace CdSearchSystem {
             public int pageCount { get; set; }
         }
 
-        public class Item {
-            public Item1 Item1 { get; set; }
+        public class Items {
+            public Item Item { get; set; }
         }
 
-        public class Item1 {
+        public class Item {
             public string affiliateUrl { get; set; }
             public string artistName { get; set; }
             public string artistNameKana { get; set; }

@@ -18,7 +18,7 @@
         <TextBox x:Name="label" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="168,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
         <TextBox x:Name="jan" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="168,152,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="217"/>
 
-        <Button Content="検索" HorizontalAlignment="Left" Margin="168,198,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btSearch" Content="検索" HorizontalAlignment="Left" Margin="168,198,0,0" VerticalAlignment="Top" Width="75" Click="btSearch_Click"/>
         <Button Content="クリア" HorizontalAlignment="Left" Margin="281,198,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         
         
@@ -35,5 +35,6 @@
 
             
         </DataGrid>
+        <TextBox x:Name="ex" HorizontalAlignment="Left" Height="23" Margin="484,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>

@@ -20,6 +20,8 @@ namespace CdSearchSystem {
         public Window1() {
 
             InitializeComponent();
+            tbId.Text = "1111";
+            tbPass.Password = "5555";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
