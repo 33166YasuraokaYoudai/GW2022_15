@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Serch" Height="450" Width="800">
     <Grid>
-        <Button  Content="戻る" HorizontalAlignment="Left" Margin="26,365,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button  Content="戻る" HorizontalAlignment="Left" Margin="60,198,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Label  Content="アーティスト名" FontSize="15" HorizontalAlignment="Left" Margin="47,53,0,0" VerticalAlignment="Top" Width="85"/>
         <Label Content="タイトル" FontSize="15" HorizontalAlignment="Left" Margin="50,86,0,0" VerticalAlignment="Top" Width="85"/>
         <Label  Content="発売元名" FontSize="15" HorizontalAlignment="Left" Margin="47,119,0,0" VerticalAlignment="Top"/>
@@ -20,20 +20,23 @@
 
         <Button x:Name="btSearch" Content="検索" HorizontalAlignment="Left" Margin="168,198,0,0" VerticalAlignment="Top" Width="75" Click="btSearch_Click"/>
         <Button Content="クリア" HorizontalAlignment="Left" Margin="281,198,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        
-        
-        <DataGrid HorizontalAlignment="Left" Height="162" Margin="109,235,0,0" VerticalAlignment="Top" Width="570">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="アーティスト名" Binding="{Binding}"/>
-                <DataGridTextColumn Header="タイトル" Binding="{Binding}"/>
-                <DataGridTextColumn Header="発売元" Binding="{Binding}"/>
-                <DataGridTextColumn Header="JANコード" Binding="{Binding}"/>
 
+
+        <DataGrid x:Name="datainfo" HorizontalAlignment="Left" Height="162" Margin="20,235,0,0" VerticalAlignment="Top" Width="751" 
+                  AutoGenerateColumns="False" CanUserAddRows="True" 
+                  ItemsSource="{Binding searchContents}"
+                  IsReadOnly="True" 
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="アーティスト名" Binding="{Binding ArtistName}" />
+                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="発売元" Binding="{Binding Label}"/>
+                <DataGridTextColumn Header="JANコード名" Binding="{Binding Jan}"/>
+                <DataGridTextColumn Header="価格" Binding="{Binding ItemPrice}"/>
+                
 
 
             </DataGrid.Columns>
-
-            
         </DataGrid>
         <TextBox x:Name="ex" HorizontalAlignment="Left" Height="23" Margin="484,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>

@@ -18,5 +18,8 @@ namespace CdSearchSystem {
 
         //JANコード
         public string Jan { get; set; }
+
+        //金額
+        public int ItemPrice { get; set; }
     }
 }
