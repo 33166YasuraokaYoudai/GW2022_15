@@ -25,87 +25,55 @@ namespace CdSearchSystem {
 
         WebClient wc = new WebClient() { Encoding = Encoding.UTF8 };
         string cdName;
-        
+        string aname;
+        string cdtitle;
+
 
 
         public Serch() {
             InitializeComponent();
         }
 
-        //一つ前に戻る処理
+        //一つ前のWindowに戻る処理
         private void Button_Click(object sender, RoutedEventArgs e) {
             Window2 window2 = new Window2();
             window2.Show();
             this.Close();
         }
 
-
+        //クリアボタン
         private void Button_Click_1(object sender, RoutedEventArgs e) {
             Clear();
         }
 
 
-
+        //検索ボタン
         private void btSearch_Click(object sender, RoutedEventArgs e) {
             NameSearch();
 
             var json = JsonConvert.DeserializeObject<Rootobject>(cdName);
 
-            //DataGridにデータを入れる処理
-            //datainfo.ItemsSource = new ObservableCollection<searchContents> {
-            //    new searchContents {ArtistName = json.Items[0].Item.artistName,
-            //                        Title = json.Items[0].Item.title,
-            //                        Label = json.Items[0].Item.label,
-            //                        Jan = json.Items[0].Item.jan,
-            //                        ItemPrice = json.Items[0].Item.itemPrice,
-            //    },
-            //    new searchContents {ArtistName = json.Items[1].Item.artistName,
-            //                        Title = json.Items[1].Item.title,
-            //                        Label = json.Items[1].Item.label,
-            //                        Jan = json.Items[1].Item.jan,
-            //                        ItemPrice = json.Items[1].Item.itemPrice,
-            //    },
+           
 
-            //};
+            list.Items.Clear();
 
-
-
-            a(json);
-
-
-
-
-        }
-
-        private void a(Rootobject json) {
-
-
-            //datainfo.ItemsSource = new ObservableCollection<searchContents> {
-            //        new searchContents {
-            //            ArtistName = json.Items[0].Item.artistName,
-            //            Title = json.Items[0].Item.title,
-            //            Label = json.Items[0].Item.label,
-            //            Jan = json.Items[0].Item.jan,
-            //            ItemPrice = json.Items[0].Item.itemPrice
-            //        }
-            //};
-
+            //データをリストに入れる
             for (int i = 0; i < json.hits; i++) {
+                var cdInfo = new ObservableCollection<searchContents>();
+                cdInfo.Add(new searchContents {
+                    ArtistName = json.Items[i].Item.artistName,
+                    Title = json.Items[i].Item.title,
+                    Label = json.Items[i].Item.label,
+                    Jan = json.Items[i].Item.jan,
+                    
+                });
 
-                datainfo.ItemsSource = new ObservableCollection<searchContents> {
-                    new searchContents {
-                        ArtistName = json.Items[i].Item.artistName,
-                        Title = json.Items[i].Item.title,
-                        Label = json.Items[i].Item.label,
-                        Jan = json.Items[i].Item.jan,
-                        ItemPrice = json.Items[i].Item.itemPrice
-                    }
-
-            };
                 
 
-
-            }
+                foreach (var item in cdInfo) {
+                    list.Items.Add(item);
+                }
+            }                   
 
         }
 
@@ -113,15 +81,69 @@ namespace CdSearchSystem {
         private void Clear() {
             artistName.Clear();
             title.Clear();
-            label.Clear();
-            jan.Clear();
         }
 
         //入力した名前を検索する処理
         private void NameSearch() {
-            string aname = artistName.Text;
-            string url = "https://app.rakuten.co.jp/services/api/BooksCD/Search/20170404?format=json&artistName="+aname+"&booksGenreId=002&applicationId=1083313806659590350";
-            cdName = wc.DownloadString(url);
+            aname = artistName.Text;
+            cdtitle = title.Text;
+
+            if (artistName.Text != "") {
+                string url1 = "https://app.rakuten.co.jp/services/api/BooksCD/Search/20170404?format=json&artistName=" + aname + "&booksGenreId=002&applicationId=1083313806659590350";
+                cdName = wc.DownloadString(url1);
+
+            } else if (title.Text != "") {
+                string url2 = "https://app.rakuten.co.jp/services/api/BooksCD/Search/20170404?format=json&Title=" + cdtitle + "&booksGenreId=002&applicationId=1083313806659590350";
+                cdName = wc.DownloadString(url2);
+            }else if (artistName.Text != "" && title.Text != "") {
+                string url3 = "https://app.rakuten.co.jp/services/api/BooksCD/Search/20170404?format=json&artistName=" + aname + "&Title=" + cdtitle + "&booksGenreId=002&applicationId=1083313806659590350";
+                cdName = wc.DownloadString(url3);
+            }
+
+        }
+
+
+
+        //ページ変更
+        private void Button_Click_2(object sender, RoutedEventArgs e) {
+            list.Items.Clear(); 
+
+
+            var json = JsonConvert.DeserializeObject<Rootobject>(cdName);
+
+
+            for (int i = 1; i < json.pageCount; i++) {
+                string url = "https://app.rakuten.co.jp/services/api/BooksCD/Search/20170404?format=json&artistName=" + aname + "&page=" + i + "&booksGenreId=002&applicationId=1083313806659590350";
+                cdName = wc.DownloadString(url);
+
+            }
+
+            for (int i = 0; i < json.hits; i++) {
+                var cdInfo = new ObservableCollection<searchContents>();
+                cdInfo.Add(new searchContents {
+                    ArtistName = json.Items[i].Item.artistName,
+                    Title = json.Items[i].Item.title,
+                    Label = json.Items[i].Item.label,
+                    Jan = json.Items[i].Item.jan,
+                });
+
+
+
+                foreach (var item in cdInfo) {
+                    list.Items.Add(item);
+                }
+            }
+        }
+
+        private void list_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            if (list.SelectedItem == null) return ;
+            searchContents item = (searchContents)list.SelectedItem;
+            infoname.Text = item.ArtistName;
+            infotitle.Text = item.Title;
+            infolabel.Text = item.Label;
+            infojan.Text = item.Jan;
+
+
         }
     }
 }

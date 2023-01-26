@@ -5,39 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="Serch" Height="450" Width="800">
+        Title="Serch" Height="700" Width="1200">
     <Grid>
-        <Button  Content="戻る" HorizontalAlignment="Left" Margin="60,198,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label  Content="アーティスト名" FontSize="15" HorizontalAlignment="Left" Margin="47,53,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label Content="タイトル" FontSize="15" HorizontalAlignment="Left" Margin="50,86,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label  Content="発売元名" FontSize="15" HorizontalAlignment="Left" Margin="47,119,0,0" VerticalAlignment="Top"/>
-        <Label  Content="JANコード" FontSize="15" HorizontalAlignment="Left" Margin="50,152,0,0" VerticalAlignment="Top"/>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Button  Content="戻る" HorizontalAlignment="Left" Margin="89,171,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label  Content="アーティスト名" FontSize="15" HorizontalAlignment="Left" Margin="44,34,0,0" VerticalAlignment="Top" Width="85"/>
+        <Label Content="タイトル" FontSize="15" HorizontalAlignment="Left" Margin="47,67,0,0" VerticalAlignment="Top" Width="85"/>
 
-        <TextBox x:Name="artistName" FontSize="15" HorizontalAlignment="Left" Height="36" Margin="168,45,0,0" VerticalAlignment="Top" Width="217" TextWrapping="Wrap"/>
-        <TextBox  x:Name="title" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="168,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
-        <TextBox x:Name="label" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="168,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
-        <TextBox x:Name="jan" FontSize="15" HorizontalAlignment="Left" Height="28" Margin="168,152,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="artistName" FontSize="15" HorizontalAlignment="Left" Height="36" Margin="165,18,0,0" VerticalAlignment="Top" Width="217" TextWrapping="Wrap"/>
+        <TextBox  x:Name="title" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="165,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
 
-        <Button x:Name="btSearch" Content="検索" HorizontalAlignment="Left" Margin="168,198,0,0" VerticalAlignment="Top" Width="75" Click="btSearch_Click"/>
-        <Button Content="クリア" HorizontalAlignment="Left" Margin="281,198,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button x:Name="btSearch" Content="検索" HorizontalAlignment="Left" Margin="204,171,0,0" VerticalAlignment="Top" Width="75" Click="btSearch_Click"/>
+        <Button Content="クリア" HorizontalAlignment="Left" Margin="351,171,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <ListView x:Name="list" HorizontalAlignment="Left" Height="312" Margin="20,286,0,0" VerticalAlignment="Top" Width="1041" SelectionChanged="list_SelectionChanged" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Width="200" DisplayMemberBinding="{Binding ArtistName}" Header="アーテイスト名" />
+                    <GridViewColumn
+                        Width="300" DisplayMemberBinding="{Binding Title}" Header="タイトル" />
+                    <GridViewColumn
+                        Width="200" DisplayMemberBinding="{Binding Label}" Header="販売元" />
+                    <GridViewColumn
+                        Width="150" DisplayMemberBinding="{Binding Jan}" Header="JANコード" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="➡" HorizontalAlignment="Left" Margin="20,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <TextBox x:Name="infoname" HorizontalAlignment="Left" Height="23" Margin="799,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="infotitle" HorizontalAlignment="Left" Height="23" Margin="799,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="infolabel" HorizontalAlignment="Left" Height="23" Margin="799,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="infojan" HorizontalAlignment="Left" Height="23" Margin="799,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
+        <Label Content="アーテイスト名" HorizontalAlignment="Left" Margin="656,34,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label Content="タイトル" HorizontalAlignment="Left" Margin="656,82,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label Content="販売元" HorizontalAlignment="Left" Margin="656,131,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label Content="JANコード" HorizontalAlignment="Left" Margin="656,180,0,0" VerticalAlignment="Top" Width="113"/>
 
-
-        <DataGrid x:Name="datainfo" HorizontalAlignment="Left" Height="162" Margin="20,235,0,0" VerticalAlignment="Top" Width="751" 
-                  AutoGenerateColumns="False" CanUserAddRows="True" 
-                  ItemsSource="{Binding searchContents}"
-                  IsReadOnly="True" 
-                  >
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="アーティスト名" Binding="{Binding ArtistName}" />
-                <DataGridTextColumn Header="タイトル" Binding="{Binding Title}"/>
-                <DataGridTextColumn Header="発売元" Binding="{Binding Label}"/>
-                <DataGridTextColumn Header="JANコード名" Binding="{Binding Jan}"/>
-                <DataGridTextColumn Header="価格" Binding="{Binding ItemPrice}"/>
-                
-
-
-            </DataGrid.Columns>
-        </DataGrid>
-        <TextBox x:Name="ex" HorizontalAlignment="Left" Height="23" Margin="484,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
