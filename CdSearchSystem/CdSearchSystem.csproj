@@ -74,10 +74,10 @@
     <Compile Include="CdInfo.xaml.cs">
       <DependentUpon>CdInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="infosys202214DataSet.Designer.cs">
+    <Compile Include="infosys202214DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>infosys202214DataSet.xsd</DependentUpon>
+      <DependentUpon>infosys202214DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="RakutenAPI.cs" />
     <Compile Include="searchContents.cs" />
@@ -141,16 +141,16 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="infosys202214DataSet.xsc">
-      <DependentUpon>infosys202214DataSet.xsd</DependentUpon>
+    <None Include="infosys202214DataSet1.xsc">
+      <DependentUpon>infosys202214DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="infosys202214DataSet.xsd">
+    <None Include="infosys202214DataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>infosys202214DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>infosys202214DataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="infosys202214DataSet.xss">
-      <DependentUpon>infosys202214DataSet.xsd</DependentUpon>
+    <None Include="infosys202214DataSet1.xss">
+      <DependentUpon>infosys202214DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

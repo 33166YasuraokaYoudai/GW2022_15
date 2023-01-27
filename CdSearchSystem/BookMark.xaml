@@ -5,9 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="BookMark" Height="450" Width="800">
-    <Grid>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="381,211,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        Title="BookMark" Height="450" Width="800" Loaded="Window_Loaded_1">
+    <Window.Resources>
+        <local:infosys202214DataSet1 x:Key="infosys202214DataSet1"/>
+        <CollectionViewSource x:Key="cdsystemTableViewSource" Source="{Binding CdsystemTable, Source={StaticResource infosys202214DataSet1}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource cdsystemTableViewSource}">
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="687,367,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <DataGrid x:Name="cdsystemTableDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="29,23,43,196" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="titleColumn" Binding="{Binding Title}" Header="Title" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="artistNameColumn" Binding="{Binding ArtistName}" Header="Artist Name" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="labelColumn" Binding="{Binding Label}" Header="Label" Width="SizeToHeader"/>
+                <DataGridTemplateColumn x:Name="salesDateColumn" Header="Sales Date" Width="SizeToHeader">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding SalesDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn x:Name="uRLColumn" Binding="{Binding URL}" Header="URL" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="janColumn" Binding="{Binding Jan}" Header="Jan" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="itemPriceColumn" Binding="{Binding ItemPrice}" Header="Item Price" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

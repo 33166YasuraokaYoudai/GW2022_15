@@ -31,5 +31,15 @@ namespace CdSearchSystem {
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
         }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e) {
+
+            CdSearchSystem.infosys202214DataSet1 infosys202214DataSet1 = ((CdSearchSystem.infosys202214DataSet1)(this.FindResource("infosys202214DataSet1")));
+            // テーブル CdsystemTable にデータを読み込みます。必要に応じてこのコードを変更できます。
+            CdSearchSystem.infosys202214DataSet1TableAdapters.CdsystemTableTableAdapter infosys202214DataSet1CdsystemTableTableAdapter = new CdSearchSystem.infosys202214DataSet1TableAdapters.CdsystemTableTableAdapter();
+            infosys202214DataSet1CdsystemTableTableAdapter.Fill(infosys202214DataSet1.CdsystemTable);
+            System.Windows.Data.CollectionViewSource cdsystemTableViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("cdsystemTableViewSource")));
+            cdsystemTableViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
