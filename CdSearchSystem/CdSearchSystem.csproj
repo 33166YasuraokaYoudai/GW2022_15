@@ -71,6 +71,14 @@
     <Compile Include="BookMark.xaml.cs">
       <DependentUpon>BookMark.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CdInfo.xaml.cs">
+      <DependentUpon>CdInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="infosys202214DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infosys202214DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RakutenAPI.cs" />
     <Compile Include="searchContents.cs" />
     <Compile Include="Window1.xaml.cs">
@@ -83,6 +91,10 @@
       <DependentUpon>Window2.xaml</DependentUpon>
     </Compile>
     <Page Include="BookMark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CdInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,6 +141,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="infosys202214DataSet.xsc">
+      <DependentUpon>infosys202214DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202214DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infosys202214DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="infosys202214DataSet.xss">
+      <DependentUpon>infosys202214DataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

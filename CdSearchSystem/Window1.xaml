@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="Window1" Height="500" Width="400">
+        Title="ログイン画面" Height="500" Width="400" ResizeMode="NoResize">
     <Grid>
         <Label Content="ログイン" FontSize="40" HorizontalAlignment="Center" Margin="140,60,120,0" VerticalAlignment="Top" Height="56" Width="132"/>
         <Label Content="ID" FontSize="20" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.181,0.46" Width="30" Height="38"/>

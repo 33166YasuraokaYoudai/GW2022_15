@@ -5,20 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="Serch" Height="700" Width="1200">
+        Title="検索画面" Height="550" Width="900" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
         </Grid.ColumnDefinitions>
-        <Button  Content="戻る" HorizontalAlignment="Left" Margin="89,171,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Label  Content="アーティスト名" FontSize="15" HorizontalAlignment="Left" Margin="44,34,0,0" VerticalAlignment="Top" Width="85"/>
-        <Label Content="タイトル" FontSize="15" HorizontalAlignment="Left" Margin="47,67,0,0" VerticalAlignment="Top" Width="85"/>
+        <Button  Content="戻る" HorizontalAlignment="Left" Margin="26,434,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Label  Content="アーティスト名" FontSize="15" HorizontalAlignment="Left" Margin="130,45,0,0" VerticalAlignment="Top" Width="85"/>
 
-        <TextBox x:Name="artistName" FontSize="15" HorizontalAlignment="Left" Height="36" Margin="165,18,0,0" VerticalAlignment="Top" Width="217" TextWrapping="Wrap"/>
-        <TextBox  x:Name="title" FontSize="15" HorizontalAlignment="Left" Height="33" Margin="165,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217"/>
+        <TextBox x:Name="artistName" FontSize="15" HorizontalAlignment="Left" Height="36" Margin="259,37,0,0" VerticalAlignment="Top" Width="217" TextWrapping="Wrap"/>
 
-        <Button x:Name="btSearch" Content="検索" HorizontalAlignment="Left" Margin="204,171,0,0" VerticalAlignment="Top" Width="75" Click="btSearch_Click"/>
-        <Button Content="クリア" HorizontalAlignment="Left" Margin="351,171,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <ListView x:Name="list" HorizontalAlignment="Left" Height="312" Margin="20,286,0,0" VerticalAlignment="Top" Width="1041" SelectionChanged="list_SelectionChanged" >
+        <Button x:Name="btSearch" Content="検索" HorizontalAlignment="Left" Margin="525,45,0,0" VerticalAlignment="Top" Width="75" Click="btSearch_Click"/>
+        <Button Content="クリア" HorizontalAlignment="Left" Margin="650,45,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <ListView x:Name="list" HorizontalAlignment="Left" Height="280" Margin="26,104,0,0" VerticalAlignment="Top" Width="835" SelectionChanged="list_SelectionChanged" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn
@@ -27,20 +25,11 @@
                         Width="300" DisplayMemberBinding="{Binding Title}" Header="タイトル" />
                     <GridViewColumn
                         Width="200" DisplayMemberBinding="{Binding Label}" Header="販売元" />
-                    <GridViewColumn
-                        Width="150" DisplayMemberBinding="{Binding Jan}" Header="JANコード" />
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="➡" HorizontalAlignment="Left" Margin="20,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <TextBox x:Name="infoname" HorizontalAlignment="Left" Height="23" Margin="799,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
-        <TextBox x:Name="infotitle" HorizontalAlignment="Left" Height="23" Margin="799,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
-        <TextBox x:Name="infolabel" HorizontalAlignment="Left" Height="23" Margin="799,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
-        <TextBox x:Name="infojan" HorizontalAlignment="Left" Height="23" Margin="799,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252"/>
-        <Label Content="アーテイスト名" HorizontalAlignment="Left" Margin="656,34,0,0" VerticalAlignment="Top" Width="113"/>
-        <Label Content="タイトル" HorizontalAlignment="Left" Margin="656,82,0,0" VerticalAlignment="Top" Width="113"/>
-        <Label Content="販売元" HorizontalAlignment="Left" Margin="656,131,0,0" VerticalAlignment="Top" Width="113"/>
-        <Label Content="JANコード" HorizontalAlignment="Left" Margin="656,180,0,0" VerticalAlignment="Top" Width="113"/>
+        <TextBox x:Name="cdtitle" FontSize="15" HorizontalAlignment="Left" Height="40" Margin="139,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="520"/>
+        <Button Content="詳細" HorizontalAlignment="Left" Margin="684,434,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
 
     </Grid>
 </Window>

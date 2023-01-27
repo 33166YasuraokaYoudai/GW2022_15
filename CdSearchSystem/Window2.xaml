@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800">
+        Title="メニュー画面" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Button Content="お気に入り" FontSize="40" HorizontalAlignment="Left" Margin="104,140,0,0" VerticalAlignment="Top" Width="227" Height="150" Click="Button_Click_1"/>
         <Button Content="検索" FontSize="40" HorizontalAlignment="Left" Margin="464,140,0,0" VerticalAlignment="Top" Width="221" Height="150" Click="Button_Click"/>
