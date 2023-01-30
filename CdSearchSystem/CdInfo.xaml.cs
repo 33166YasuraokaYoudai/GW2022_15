@@ -68,5 +68,14 @@ namespace CdSearchSystem {
             cdImage.Source = m_bitmap;
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
+            BookMark bookMark = new BookMark();
+            bookMark.passtitle(titol.Text,artistname.Text,label.Text,url.Text,salesdate.Text,jan.Text,price.Text);
+
+
+            bookMark.Show();
+            this.Close();
+        }
     }
 }

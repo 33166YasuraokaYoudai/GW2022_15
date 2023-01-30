@@ -17,6 +17,12 @@ namespace CdSearchSystem {
     /// BookMark.xaml の相互作用ロジック
     /// </summary>
     public partial class BookMark : Window {
+        CdSearchSystem.infosys202214DataSet1 infosys202214DataSet1;
+        CdSearchSystem.infosys202214DataSet1TableAdapters.CdsystemTableTableAdapter CdsystemTableTableAdapter;
+        System.Windows.Data.CollectionViewSource cdsearchViewSource;
+
+        string title;
+
         public BookMark() {
             InitializeComponent();
         }
@@ -32,14 +38,19 @@ namespace CdSearchSystem {
 
         }
 
+        public void passtitle(String Title,String ArtistName,String Label,String Url,String SalseData,String Jan,String ItemPrice) {
+            title = Title;
+        }
+
+
         private void Window_Loaded_1(object sender, RoutedEventArgs e) {
 
-            CdSearchSystem.infosys202214DataSet1 infosys202214DataSet1 = ((CdSearchSystem.infosys202214DataSet1)(this.FindResource("infosys202214DataSet1")));
+            infosys202214DataSet1 = ((CdSearchSystem.infosys202214DataSet1)(this.FindResource("infosys202214DataSet1")));
             // テーブル CdsystemTable にデータを読み込みます。必要に応じてこのコードを変更できます。
-            CdSearchSystem.infosys202214DataSet1TableAdapters.CdsystemTableTableAdapter infosys202214DataSet1CdsystemTableTableAdapter = new CdSearchSystem.infosys202214DataSet1TableAdapters.CdsystemTableTableAdapter();
-            infosys202214DataSet1CdsystemTableTableAdapter.Fill(infosys202214DataSet1.CdsystemTable);
-            System.Windows.Data.CollectionViewSource cdsystemTableViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("cdsystemTableViewSource")));
-            cdsystemTableViewSource.View.MoveCurrentToFirst();
+            CdsystemTableTableAdapter = new CdSearchSystem.infosys202214DataSet1TableAdapters.CdsystemTableTableAdapter();
+            CdsystemTableTableAdapter.Fill(infosys202214DataSet1.CdsystemTable);
+            cdsearchViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("cdsystemTableViewSource")));
+            cdsearchViewSource.View.MoveCurrentToFirst();
         }
     }
 }
