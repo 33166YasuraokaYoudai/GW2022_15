@@ -20,9 +20,9 @@ namespace CdSearchSystem {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("infosys202214DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("infosys202214DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class infosys202214DataSet1 : global::System.Data.DataSet {
+    public partial class infosys202214DataSet : global::System.Data.DataSet {
         
         private CdsystemTableDataTable tableCdsystemTable;
         
@@ -30,7 +30,7 @@ namespace CdSearchSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public infosys202214DataSet1() {
+        public infosys202214DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CdSearchSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected infosys202214DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected infosys202214DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace CdSearchSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            infosys202214DataSet1 cln = ((infosys202214DataSet1)(base.Clone()));
+            infosys202214DataSet cln = ((infosys202214DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CdSearchSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "infosys202214DataSet1";
+            this.DataSetName = "infosys202214DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/infosys202214DataSet1.xsd";
+            this.Namespace = "http://tempuri.org/infosys202214DataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCdsystemTable = new CdsystemTableDataTable();
@@ -225,7 +225,7 @@ namespace CdSearchSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            infosys202214DataSet1 ds = new infosys202214DataSet1();
+            infosys202214DataSet ds = new infosys202214DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -281,19 +281,19 @@ namespace CdSearchSystem {
             
             private global::System.Data.DataColumn columnID;
             
-            private global::System.Data.DataColumn columnTitle;
-            
             private global::System.Data.DataColumn columnArtistName;
+            
+            private global::System.Data.DataColumn columnTitle;
             
             private global::System.Data.DataColumn columnLabel;
             
             private global::System.Data.DataColumn columnSalesDate;
             
+            private global::System.Data.DataColumn columnItemPrice;
+            
             private global::System.Data.DataColumn columnURL;
             
             private global::System.Data.DataColumn columnJan;
-            
-            private global::System.Data.DataColumn columnItemPrice;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -338,17 +338,17 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn TitleColumn {
+            public global::System.Data.DataColumn ArtistNameColumn {
                 get {
-                    return this.columnTitle;
+                    return this.columnArtistName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ArtistNameColumn {
+            public global::System.Data.DataColumn TitleColumn {
                 get {
-                    return this.columnArtistName;
+                    return this.columnTitle;
                 }
             }
             
@@ -370,6 +370,14 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ItemPriceColumn {
+                get {
+                    return this.columnItemPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn URLColumn {
                 get {
                     return this.columnURL;
@@ -381,14 +389,6 @@ namespace CdSearchSystem {
             public global::System.Data.DataColumn JanColumn {
                 get {
                     return this.columnJan;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ItemPriceColumn {
-                get {
-                    return this.columnItemPrice;
                 }
             }
             
@@ -429,17 +429,17 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CdsystemTableRow AddCdsystemTableRow(string Title, string ArtistName, string Label, System.DateTime SalesDate, string URL, string Jan, string ItemPrice) {
+            public CdsystemTableRow AddCdsystemTableRow(string ArtistName, string Title, string Label, string SalesDate, string ItemPrice, string URL, string Jan) {
                 CdsystemTableRow rowCdsystemTableRow = ((CdsystemTableRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Title,
                         ArtistName,
+                        Title,
                         Label,
                         SalesDate,
+                        ItemPrice,
                         URL,
-                        Jan,
-                        ItemPrice};
+                        Jan};
                 rowCdsystemTableRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCdsystemTableRow);
                 return rowCdsystemTableRow;
@@ -470,13 +470,13 @@ namespace CdSearchSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnID = base.Columns["ID"];
-                this.columnTitle = base.Columns["Title"];
                 this.columnArtistName = base.Columns["ArtistName"];
+                this.columnTitle = base.Columns["Title"];
                 this.columnLabel = base.Columns["Label"];
                 this.columnSalesDate = base.Columns["SalesDate"];
+                this.columnItemPrice = base.Columns["ItemPrice"];
                 this.columnURL = base.Columns["URL"];
                 this.columnJan = base.Columns["Jan"];
-                this.columnItemPrice = base.Columns["ItemPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -484,20 +484,20 @@ namespace CdSearchSystem {
             private void InitClass() {
                 this.columnID = new global::System.Data.DataColumn("ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID);
-                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTitle);
                 this.columnArtistName = new global::System.Data.DataColumn("ArtistName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnArtistName);
+                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitle);
                 this.columnLabel = new global::System.Data.DataColumn("Label", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLabel);
-                this.columnSalesDate = new global::System.Data.DataColumn("SalesDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                this.columnSalesDate = new global::System.Data.DataColumn("SalesDate", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSalesDate);
+                this.columnItemPrice = new global::System.Data.DataColumn("ItemPrice", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnItemPrice);
                 this.columnURL = new global::System.Data.DataColumn("URL", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnURL);
                 this.columnJan = new global::System.Data.DataColumn("Jan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJan);
-                this.columnItemPrice = new global::System.Data.DataColumn("ItemPrice", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnItemPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -506,12 +506,13 @@ namespace CdSearchSystem {
                 this.columnID.AllowDBNull = false;
                 this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
-                this.columnTitle.MaxLength = 2147483647;
                 this.columnArtistName.MaxLength = 2147483647;
+                this.columnTitle.MaxLength = 2147483647;
                 this.columnLabel.MaxLength = 2147483647;
+                this.columnSalesDate.MaxLength = 2147483647;
+                this.columnItemPrice.MaxLength = 2147483647;
                 this.columnURL.MaxLength = 2147483647;
                 this.columnJan.MaxLength = 2147483647;
-                this.columnItemPrice.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -579,7 +580,7 @@ namespace CdSearchSystem {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                infosys202214DataSet1 ds = new infosys202214DataSet1();
+                infosys202214DataSet ds = new infosys202214DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -665,22 +666,6 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Title {
-                get {
-                    try {
-                        return ((string)(this[this.tableCdsystemTable.TitleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'CdsystemTable\' にある列 \'Title\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableCdsystemTable.TitleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string ArtistName {
                 get {
                     try {
@@ -692,6 +677,22 @@ namespace CdSearchSystem {
                 }
                 set {
                     this[this.tableCdsystemTable.ArtistNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Title {
+                get {
+                    try {
+                        return ((string)(this[this.tableCdsystemTable.TitleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'CdsystemTable\' にある列 \'Title\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableCdsystemTable.TitleColumn] = value;
                 }
             }
             
@@ -713,10 +714,10 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime SalesDate {
+            public string SalesDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tableCdsystemTable.SalesDateColumn]));
+                        return ((string)(this[this.tableCdsystemTable.SalesDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("テーブル \'CdsystemTable\' にある列 \'SalesDate\' の値は DBNull です。", e);
@@ -724,6 +725,22 @@ namespace CdSearchSystem {
                 }
                 set {
                     this[this.tableCdsystemTable.SalesDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ItemPrice {
+                get {
+                    try {
+                        return ((string)(this[this.tableCdsystemTable.ItemPriceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("テーブル \'CdsystemTable\' にある列 \'ItemPrice\' の値は DBNull です。", e);
+                    }
+                }
+                set {
+                    this[this.tableCdsystemTable.ItemPriceColumn] = value;
                 }
             }
             
@@ -761,18 +778,14 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string ItemPrice {
-                get {
-                    try {
-                        return ((string)(this[this.tableCdsystemTable.ItemPriceColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("テーブル \'CdsystemTable\' にある列 \'ItemPrice\' の値は DBNull です。", e);
-                    }
-                }
-                set {
-                    this[this.tableCdsystemTable.ItemPriceColumn] = value;
-                }
+            public bool IsArtistNameNull() {
+                return this.IsNull(this.tableCdsystemTable.ArtistNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetArtistNameNull() {
+                this[this.tableCdsystemTable.ArtistNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -785,18 +798,6 @@ namespace CdSearchSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetTitleNull() {
                 this[this.tableCdsystemTable.TitleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsArtistNameNull() {
-                return this.IsNull(this.tableCdsystemTable.ArtistNameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetArtistNameNull() {
-                this[this.tableCdsystemTable.ArtistNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -825,6 +826,18 @@ namespace CdSearchSystem {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsItemPriceNull() {
+                return this.IsNull(this.tableCdsystemTable.ItemPriceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetItemPriceNull() {
+                this[this.tableCdsystemTable.ItemPriceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsURLNull() {
                 return this.IsNull(this.tableCdsystemTable.URLColumn);
             }
@@ -845,18 +858,6 @@ namespace CdSearchSystem {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetJanNull() {
                 this[this.tableCdsystemTable.JanColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsItemPriceNull() {
-                return this.IsNull(this.tableCdsystemTable.ItemPriceColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetItemPriceNull() {
-                this[this.tableCdsystemTable.ItemPriceColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -895,7 +896,7 @@ namespace CdSearchSystem {
         }
     }
 }
-namespace CdSearchSystem.infosys202214DataSet1TableAdapters {
+namespace CdSearchSystem.infosys202214DataSetTableAdapters {
     
     
     /// <summary>
@@ -1020,49 +1021,44 @@ namespace CdSearchSystem.infosys202214DataSet1TableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "CdsystemTable";
             tableMapping.ColumnMappings.Add("ID", "ID");
-            tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("ArtistName", "ArtistName");
+            tableMapping.ColumnMappings.Add("Title", "Title");
             tableMapping.ColumnMappings.Add("Label", "Label");
             tableMapping.ColumnMappings.Add("SalesDate", "SalesDate");
+            tableMapping.ColumnMappings.Add("ItemPrice", "ItemPrice");
             tableMapping.ColumnMappings.Add("URL", "URL");
             tableMapping.ColumnMappings.Add("Jan", "Jan");
-            tableMapping.ColumnMappings.Add("ItemPrice", "ItemPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[CdsystemTable] WHERE (([ID] = @Original_ID) AND ((@IsNull_Sale" +
-                "sDate = 1 AND [SalesDate] IS NULL) OR ([SalesDate] = @Original_SalesDate)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[CdsystemTable] WHERE (([ID] = @Original_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SalesDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalesDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CdsystemTable] ([Title], [ArtistName], [Label], [SalesDate], [URL], [Jan], [ItemPrice]) VALUES (@Title, @ArtistName, @Label, @SalesDate, @URL, @Jan, @ItemPrice);
-SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM CdsystemTable WHERE (ID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CdsystemTable] ([ArtistName], [Title], [Label], [SalesDate], [ItemPrice], [URL], [Jan]) VALUES (@ArtistName, @Title, @Label, @SalesDate, @ItemPrice, @URL, @Jan);
+SELECT ID, ArtistName, Title, Label, SalesDate, ItemPrice, URL, Jan FROM CdsystemTable WHERE (ID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArtistName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArtistName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Label", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemPrice", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@URL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jan", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemPrice", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CdsystemTable] SET [Title] = @Title, [ArtistName] = @ArtistName, [Label] = @Label, [SalesDate] = @SalesDate, [URL] = @URL, [Jan] = @Jan, [ItemPrice] = @ItemPrice WHERE (([ID] = @Original_ID) AND ((@IsNull_SalesDate = 1 AND [SalesDate] IS NULL) OR ([SalesDate] = @Original_SalesDate)));
-SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM CdsystemTable WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[CdsystemTable] SET [ArtistName] = @ArtistName, [Title] = @Title, [Label] = @Label, [SalesDate] = @SalesDate, [ItemPrice] = @ItemPrice, [URL] = @URL, [Jan] = @Jan WHERE (([ID] = @Original_ID));
+SELECT ID, ArtistName, Title, Label, SalesDate, ItemPrice, URL, Jan FROM CdsystemTable WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ArtistName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ArtistName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Label", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Label", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SalesDate", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemPrice", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@URL", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "URL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Jan", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Jan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ItemPrice", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ItemPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_SalesDate", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_SalesDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SalesDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -1079,7 +1075,7 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM dbo.Cdsy" +
+            this._commandCollection[0].CommandText = "SELECT ID, ArtistName, Title, Label, SalesDate, ItemPrice, URL, Jan FROM dbo.Cdsy" +
                 "stemTable";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
@@ -1088,7 +1084,7 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(infosys202214DataSet1.CdsystemTableDataTable dataTable) {
+        public virtual int Fill(infosys202214DataSet.CdsystemTableDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1101,9 +1097,9 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual infosys202214DataSet1.CdsystemTableDataTable GetData() {
+        public virtual infosys202214DataSet.CdsystemTableDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            infosys202214DataSet1.CdsystemTableDataTable dataTable = new infosys202214DataSet1.CdsystemTableDataTable();
+            infosys202214DataSet.CdsystemTableDataTable dataTable = new infosys202214DataSet.CdsystemTableDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1111,14 +1107,14 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(infosys202214DataSet1.CdsystemTableDataTable dataTable) {
+        public virtual int Update(infosys202214DataSet.CdsystemTableDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(infosys202214DataSet1 dataSet) {
+        public virtual int Update(infosys202214DataSet dataSet) {
             return this.Adapter.Update(dataSet, "CdsystemTable");
         }
         
@@ -1141,16 +1137,8 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<global::System.DateTime> Original_SalesDate) {
+        public virtual int Delete(int Original_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
-            if ((Original_SalesDate.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((System.DateTime)(Original_SalesDate.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1171,18 +1159,18 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Title, string ArtistName, string Label, global::System.Nullable<global::System.DateTime> SalesDate, string URL, string Jan, string ItemPrice) {
-            if ((Title == null)) {
+        public virtual int Insert(string ArtistName, string Title, string Label, string SalesDate, string ItemPrice, string URL, string Jan) {
+            if ((ArtistName == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Title));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ArtistName));
             }
-            if ((ArtistName == null)) {
+            if ((Title == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ArtistName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Title));
             }
             if ((Label == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1190,29 +1178,29 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Label));
             }
-            if ((SalesDate.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(SalesDate.Value));
-            }
-            else {
+            if ((SalesDate == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((URL == null)) {
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SalesDate));
+            }
+            if ((ItemPrice == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(URL));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(ItemPrice));
             }
-            if ((Jan == null)) {
+            if ((URL == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Jan));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(URL));
             }
-            if ((ItemPrice == null)) {
+            if ((Jan == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(ItemPrice));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Jan));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1234,18 +1222,18 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Title, string ArtistName, string Label, global::System.Nullable<global::System.DateTime> SalesDate, string URL, string Jan, string ItemPrice, int Original_ID, global::System.Nullable<global::System.DateTime> Original_SalesDate, int ID) {
-            if ((Title == null)) {
+        public virtual int Update(string ArtistName, string Title, string Label, string SalesDate, string ItemPrice, string URL, string Jan, int Original_ID, int ID) {
+            if ((ArtistName == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Title));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ArtistName));
             }
-            if ((ArtistName == null)) {
+            if ((Title == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ArtistName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Title));
             }
             if ((Label == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
@@ -1253,40 +1241,32 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Label));
             }
-            if ((SalesDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(SalesDate.Value));
-            }
-            else {
+            if ((SalesDate == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((URL == null)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SalesDate));
+            }
+            if ((ItemPrice == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(URL));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(ItemPrice));
             }
-            if ((Jan == null)) {
+            if ((URL == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Jan));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(URL));
             }
-            if ((ItemPrice == null)) {
+            if ((Jan == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(ItemPrice));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Jan));
             }
             this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
-            if ((Original_SalesDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_SalesDate.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(ID));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(ID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1307,8 +1287,8 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Title, string ArtistName, string Label, global::System.Nullable<global::System.DateTime> SalesDate, string URL, string Jan, string ItemPrice, int Original_ID, global::System.Nullable<global::System.DateTime> Original_SalesDate) {
-            return this.Update(Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice, Original_ID, Original_SalesDate, Original_ID);
+        public virtual int Update(string ArtistName, string Title, string Label, string SalesDate, string ItemPrice, string URL, string Jan, int Original_ID) {
+            return this.Update(ArtistName, Title, Label, SalesDate, ItemPrice, URL, Jan, Original_ID, Original_ID);
         }
     }
     
@@ -1403,7 +1383,7 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(infosys202214DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(infosys202214DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cdsystemTableTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CdsystemTable.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1422,7 +1402,7 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(infosys202214DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(infosys202214DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._cdsystemTableTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.CdsystemTable.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1440,7 +1420,7 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(infosys202214DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(infosys202214DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._cdsystemTableTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.CdsystemTable.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1482,7 +1462,7 @@ SELECT ID, Title, ArtistName, Label, SalesDate, URL, Jan, ItemPrice FROM Cdsyste
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(infosys202214DataSet1 dataSet) {
+        public virtual int UpdateAll(infosys202214DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

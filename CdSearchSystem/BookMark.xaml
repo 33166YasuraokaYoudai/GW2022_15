@@ -5,31 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="BookMark" Height="450" Width="800" Loaded="Window_Loaded_1">
+        Title="BookMark" Height="450" Width="1200" Loaded="Window_Loaded_1">
     <Window.Resources>
-        <local:infosys202214DataSet1 x:Key="infosys202214DataSet1"/>
-        <CollectionViewSource x:Key="cdsystemTableViewSource" Source="{Binding CdsystemTable, Source={StaticResource infosys202214DataSet1}}"/>
+        <local:infosys202214DataSet x:Key="infosys202214DataSet"/>
+        <CollectionViewSource x:Key="cdsystemTableViewSource" Source="{Binding CdsystemTable, Source={StaticResource infosys202214DataSet}}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource cdsystemTableViewSource}">
         <Button Content="戻る" HorizontalAlignment="Left" Margin="687,367,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <DataGrid x:Name="cdsystemTableDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="29,23,43,196" RowDetailsVisibilityMode="VisibleWhenSelected">
+        <DataGrid x:Name="cdsystemTableDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,47,91" RowDetailsVisibilityMode="VisibleWhenSelected" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" IsReadOnly="True" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="titleColumn" Binding="{Binding Title}" Header="Title" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="artistNameColumn" Binding="{Binding ArtistName}" Header="Artist Name" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="labelColumn" Binding="{Binding Label}" Header="Label" Width="SizeToHeader"/>
-                <DataGridTemplateColumn x:Name="salesDateColumn" Header="Sales Date" Width="SizeToHeader">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <DatePicker SelectedDate="{Binding SalesDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn x:Name="uRLColumn" Binding="{Binding URL}" Header="URL" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="janColumn" Binding="{Binding Jan}" Header="Jan" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="itemPriceColumn" Binding="{Binding ItemPrice}" Header="Item Price" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="iDColumn" Binding="{Binding ID}" Header="ID" IsReadOnly="True" Width="50"/>
+                <DataGridTextColumn x:Name="artistNameColumn" Binding="{Binding ArtistName}" Header="アーティスト名" Width="150"/>
+                <DataGridTextColumn x:Name="titleColumn" Binding="{Binding Title}" Header="タイトル" Width="200"/>
+                <DataGridTextColumn x:Name="labelColumn" Binding="{Binding Label}" Header="販売元" Width="200"/>
+                <DataGridTextColumn x:Name="salesDateColumn" Binding="{Binding SalesDate}" Header="発売日" Width="100"/>
+                <DataGridTextColumn x:Name="itemPriceColumn" Binding="{Binding ItemPrice}" Header="価格" Width="100"/>
+                <DataGridTextColumn x:Name="uRLColumn" Binding="{Binding URL}" Header="URL" Width="200"/>
+                <DataGridTextColumn x:Name="janColumn" Binding="{Binding Jan}" Header="JANコード" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Button x:Name="Delete" Content="削除" HorizontalAlignment="Left" Margin="95,357,0,0" VerticalAlignment="Top" Width="75" Click="Delete_Click"/>
 
     </Grid>
 </Window>
