@@ -79,8 +79,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>infosys202214DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="infosys202214DataSetIdPass.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>infosys202214DataSetIdPass.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RakutenAPI.cs" />
     <Compile Include="searchContents.cs" />
+    <Compile Include="UserRegistration.xaml.cs">
+      <DependentUpon>UserRegistration.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
@@ -110,6 +118,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserRegistration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -151,6 +163,17 @@
     </None>
     <None Include="infosys202214DataSet2.xss">
       <DependentUpon>infosys202214DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202214DataSetIdPass.xsc">
+      <DependentUpon>infosys202214DataSetIdPass.xsd</DependentUpon>
+    </None>
+    <None Include="infosys202214DataSetIdPass.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>infosys202214DataSetIdPass.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="infosys202214DataSetIdPass.xss">
+      <DependentUpon>infosys202214DataSetIdPass.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
