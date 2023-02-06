@@ -5,19 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="ログイン画面" Height="500" Width="400" ResizeMode="NoResize">
+        Title="ログイン画面" Height="500" Width="400" ResizeMode="NoResize" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:infosys202214DataSetUserPassID x:Key="infosys202214DataSetUserPassID"/>
+        <CollectionViewSource x:Key="CollectionViewSource" Source="{Binding UserIdPassTable, Source={StaticResource infosys202214DataSetUserPassID}}"/>
+    </Window.Resources>
     <Grid>
         <Label Content="ログイン" FontSize="40" HorizontalAlignment="Center" Margin="140,60,120,0" VerticalAlignment="Top" Height="56" Width="132"/>
         <Label Content="ID" FontSize="20" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.181,0.46" Width="30" Height="38"/>
         <TextBox x:Name="tbId" HorizontalAlignment="Left" FontSize="20" Height="38" Margin="140,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" RenderTransformOrigin="0.464,0.021"/>
         <Label Content="パスワード" FontSize="20" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top"/>
-        <PasswordBox x:Name="tbPass" HorizontalAlignment="Left" FontSize="20" Height="34" Margin="140,218,0,0"  VerticalAlignment="Top" Width="160"/>
+        <PasswordBox x:Name="tbPass" HorizontalAlignment="Left" FontSize="20" Height="34" Margin="140,218,0,0"  VerticalAlignment="Top" Width="160" PasswordChar="＊"/>
         <Button x:Name="btLogin" Content="ログイン" HorizontalAlignment="Left" Margin="160,324,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.211,0.637" Click="Button_Click"/>
         <Image HorizontalAlignment="Left" Height="38" Margin="97,150,0,0" VerticalAlignment="Top" Width="38" Source="C:\Users\infosys\Pictures\Saved Pictures\5168974.png"/>
         <Image HorizontalAlignment="Left" Height="35" Margin="97,218,0,0" VerticalAlignment="Top" Width="38" Source="C:\Users\infosys\Pictures\Saved Pictures\Lock-Icon-hi-06.png"/>
         <Button Content="戻る" HorizontalAlignment="Left" Margin="160,384,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
         <Label Content="CD検索アプリ" HorizontalAlignment="Left" Margin="160,32,0,0" VerticalAlignment="Top" Height="28" Width="75"/>
         <Button x:Name="NewRegistration" Content="新規登録" HorizontalAlignment="Left" Margin="27,375,0,0" VerticalAlignment="Top" Width="92" Click="NewRegistration_Click"/>
+        <Label x:Name="check" Foreground="Red" HorizontalAlignment="Left" Margin="140,267,0,0" VerticalAlignment="Top" Width="160" Height="27"/>
 
     </Grid>
 

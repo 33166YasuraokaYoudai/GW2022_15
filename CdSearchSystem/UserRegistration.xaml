@@ -7,20 +7,21 @@
         mc:Ignorable="d"
         Title="UserRegistration" Height="500" Width="400" Loaded="Window_Loaded">
     <Window.Resources>
-        <local:infosys202214DataSetIdPass x:Key="infosys202214DataSetIdPass"/>
-        <CollectionViewSource x:Key="CollectionViewSource" Source="{Binding UserIdPassTable, Source={StaticResource infosys202214DataSetIdPass}}"/>
+        <local:infosys202214DataSetUserPassID x:Key="infosys202214DataSetUserPassID"/>
+        <CollectionViewSource x:Key="CollectionViewSource" Source="{Binding UserIdPassTable, Source={StaticResource infosys202214DataSetUserPassID}}"/>
     </Window.Resources>
 
     <Grid>
         <Label Content="ユーザー登録" HorizontalAlignment="Left" Margin="148,10,0,0" VerticalAlignment="Top" Width="69"/>
         <TextBox x:Name="userId" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="50,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <TextBox  x:Name="userpass" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="50,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <TextBox x:Name="passcheck" FontSize="20"  HorizontalAlignment="Left" Height="40" Margin="50,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="280"/>
-        <Label Content="パスワード再確認" HorizontalAlignment="Left" Margin="50,281,0,0" VerticalAlignment="Top"/>
-        <Label Content="ID入力(四桁以上)" HorizontalAlignment="Left" Margin="50,61,0,0" VerticalAlignment="Top"/>
-        <Label Content="パスワード入力(四桁以上)" HorizontalAlignment="Left" Margin="50,207,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="registration"  Content="登録" HorizontalAlignment="Left" Margin="126,396,0,0" VerticalAlignment="Top" Width="75" Click="registration_Click"/>
-        <Button Content="戻る" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="225,396,0,0" Click="Button_Click"/>
+        <PasswordBox  x:Name="userpass" FontSize="20" HorizontalAlignment="Left" Height="40" Margin="50,197,0,0"  VerticalAlignment="Top" Width="280"/>
+        <PasswordBox x:Name="passcheck" FontSize="20"  HorizontalAlignment="Left" Height="40" Margin="50,281,0,0"  VerticalAlignment="Top" Width="280"/>
+        <Label Content="パスワード再確認" HorizontalAlignment="Left" Margin="50,252,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID入力(４文字以上、１２文字以下)" HorizontalAlignment="Left" Margin="50,61,0,0" VerticalAlignment="Top"/>
+        <Label Content="パスワード入力(４桁)" HorizontalAlignment="Left" Margin="50,168,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="registration"  Content="登録" HorizontalAlignment="Left" Margin="142,427,0,0" VerticalAlignment="Top" Width="75" Click="registration_Click"/>
+        <Button Content="戻る" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="50,427,0,0" Click="Button_Click"/>
+        <Label x:Name="check" FontSize="15" Foreground="Red" HorizontalAlignment="Left" Margin="50,326,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.539,0.588" Width="280" Height="70"/>
 
     </Grid>
 </Window>

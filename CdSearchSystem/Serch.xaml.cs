@@ -65,8 +65,6 @@ namespace CdSearchSystem {
                         ArtistName = json.Items[i].Item.artistName,
                         Title = json.Items[i].Item.title,
                         Label = json.Items[i].Item.label,
-                        Jan = json.Items[i].Item.jan,
-                        ItemUrl = json.Items[i].Item.itemUrl,
 
                     });
 
@@ -112,6 +110,11 @@ namespace CdSearchSystem {
             cdinfo.passtitle(cdtitle.Text);
             cdinfo.Show();
             this.Close();
+        }
+
+        private void pageup_Click(object sender, RoutedEventArgs e) {
+            
+
         }
     }
 }
