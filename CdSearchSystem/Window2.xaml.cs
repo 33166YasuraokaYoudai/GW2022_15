@@ -30,7 +30,7 @@ namespace CdSearchSystem {
         private void Button_Click_1(object sender, RoutedEventArgs e) {
             BookMark book = new BookMark();
             book.Show();
-            this.Close();
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e) {

@@ -35,12 +35,7 @@ namespace CdSearchSystem {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            Window2 window2 = new Window2();
-            window2.Show();
-            this.Close();
-
-        }
+      
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
 
@@ -85,13 +80,22 @@ namespace CdSearchSystem {
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e) {
-            //選択行の取り出し
-            DataRowView drv = (DataRowView)cdsearchViewSource.View.CurrentItem;
-            //選択されたレコードの削除
-            drv.Delete();
-            //データベース更新
-            CdsystemTableTableAdapter.Update(this.infosys202214DataSet.CdsystemTable);
 
+            try {
+                //選択行の取り出し
+                DataRowView drv = (DataRowView)cdsearchViewSource.View.CurrentItem;
+                //選択されたレコードの削除
+                drv.Delete();
+                //データベース更新
+                CdsystemTableTableAdapter.Update(this.infosys202214DataSet.CdsystemTable);
+
+            }
+            catch (Exception) {
+
+            }
+            if (cdsystemTableDataGrid.Items.Count == 0) {
+                Delete.IsEnabled = false;
+            }
         }
 
     }

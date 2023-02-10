@@ -110,7 +110,6 @@ namespace CdSearchSystem {
             CdInfo cdinfo = new CdInfo();
             cdinfo.passtitle(cdtitle.Text);
             cdinfo.Show();
-            this.Close();
         }
 
        

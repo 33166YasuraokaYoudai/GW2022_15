@@ -71,7 +71,8 @@ namespace CdSearchSystem {
             UserIdPassTableTableAdapter.Fill(infosys202214DataSetUserPassID.UserIdPassTable);
             CollectionViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("CollectionViewSource")));
             CollectionViewSource.View.MoveCurrentToFirst();
-
+            tbId.Text = "bbbb";
+            tbPass.Password = "1111";
         }
 
         public void user(object passDate, object idDate) {
