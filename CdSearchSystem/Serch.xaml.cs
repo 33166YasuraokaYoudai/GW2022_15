@@ -50,9 +50,7 @@ namespace CdSearchSystem {
         //検索ボタン
         private void btSearch_Click(object sender, RoutedEventArgs e) {
 
-            if (artistName.Text == "") {
-                check.Content = "キーワードを入力してください。";
-            } else {
+            if (!(artistName.Text == "")) {
                 check.Content = null;
                 NameSearch();
 
@@ -68,12 +66,15 @@ namespace CdSearchSystem {
                         Label = json.Items[i].Item.label,
 
                     });
-
                     foreach (var item in cdInfo) {
                         list.Items.Add(item);
                     }
                 }
+            } else if(list.Items.Count == 0){
+                check.Content = "キーワードを入力してください。";
             }
+
+
         }
 
         //入力されたデータを消去する処理

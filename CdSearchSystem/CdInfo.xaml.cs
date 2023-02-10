@@ -32,12 +32,7 @@ namespace CdSearchSystem {
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            Serch serch = new Serch();
-            serch.Show();
-            this.Close();
-        }
-
+        
         public void passtitle(string strData) {
             pass = strData;
         }
