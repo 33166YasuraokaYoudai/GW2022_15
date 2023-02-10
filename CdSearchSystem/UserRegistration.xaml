@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="UserRegistration" Height="500" Width="400" Loaded="Window_Loaded">
+        Title="UserRegistration" Height="500" Width="400" Loaded="Window_Loaded" ResizeMode="NoResize">
     <Window.Resources>
         <local:infosys202214DataSetUserPassID x:Key="infosys202214DataSetUserPassID"/>
         <CollectionViewSource x:Key="CollectionViewSource" Source="{Binding UserIdPassTable, Source={StaticResource infosys202214DataSetUserPassID}}"/>

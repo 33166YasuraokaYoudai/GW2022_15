@@ -9,7 +9,7 @@
     <Grid>
         <Button Content="お気に入り" FontSize="40" HorizontalAlignment="Left" Margin="104,140,0,0" VerticalAlignment="Top" Width="227" Height="150" Click="Button_Click_1"/>
         <Button Content="検索" FontSize="40" HorizontalAlignment="Left" Margin="464,140,0,0" VerticalAlignment="Top" Width="221" Height="150" Click="Button_Click"/>
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="66,22,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="697,379,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
 
     </Grid>
 </Window>

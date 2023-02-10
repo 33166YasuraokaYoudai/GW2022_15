@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CdSearchSystem"
         mc:Ignorable="d"
-        Title="BookMark" Height="600" Width="1200" Loaded="Window_Loaded_1">
+        Title="ブックマーク" Height="600" Width="1200" Loaded="Window_Loaded_1" ResizeMode="NoResize">
     <Window.Resources>
         <local:infosys202214DataSet x:Key="infosys202214DataSet"/>
         <CollectionViewSource x:Key="cdsystemTableViewSource" Source="{Binding CdsystemTable, Source={StaticResource infosys202214DataSet}}"/>
