@@ -1,6 +1,7 @@
 ﻿using CdSearchSystem.infosys202214DataSetIdPassTableAdapters;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -19,34 +20,37 @@ namespace CdSearchSystem {
     /// Window1.xaml の相互作用ロジック
     /// </summary>
     public partial class Window1 : Window {
+        string pass;
+        string id;
+
+        CdSearchSystem.infosys202214DataSetUserPassID infosys202214DataSetUserPassID;
+        CdSearchSystem.infosys202214DataSetUserPassIDTableAdapters.UserIdPassTableTableAdapter UserIdPassTableTableAdapter;
+        System.Windows.Data.CollectionViewSource CollectionViewSource;
+
 
         public Window1() {
 
             InitializeComponent();
-            
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
 
-            if (tbId.Text == "" || tbPass.Password == "") {
-                check.Content = "ID又は、パスワードが違います。";
-            } else {
-                StreamReader sr = new StreamReader(@"C:\Users\infosys\Documents\UserInfo.txt");
-                while (sr.Peek() > -1) {
-                    string s = sr.ReadLine();
-                    string[] s_array = s.Split(',');
+            DataTable dt;
+            dt = infosys202214DataSetUserPassID.Tables["UserIdPassTable"];
 
-                    if (s_array[0] == tbId.Text && s_array[1] == tbPass.Password) {
-                        
-                        Window2 window2 = new Window2();
-                        window2.Show();
-                        this.Close();
-                    } else {
-                        check.Content = "パスワード又はIDが違います。";
-                        tbPass.Clear();                    
-                    }
+            foreach (DataRow item in dt.Rows) {
+                Console.WriteLine(item["UserId"].ToString(), item["Pass"].ToString());
+
+                if (tbId.Text == item["UserId"].ToString() && tbPass.Password == item["Pass"].ToString()) {
+                    Window2 window2 = new Window2();
+                    window2.Show();
+                    this.Close();
+                    return;
                 }
-                sr.Close();
+                if (item == infosys202214DataSetUserPassID.UserIdPassTable.Last()) {
+                    check.Content = "ユーザー名又はパスワードが違います。";
+                }
             }
         }
 
@@ -62,6 +66,17 @@ namespace CdSearchSystem {
             this.Close();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e) {
+            infosys202214DataSetUserPassID = ((CdSearchSystem.infosys202214DataSetUserPassID)(this.FindResource("infosys202214DataSetUserPassID")));
+            UserIdPassTableTableAdapter = new CdSearchSystem.infosys202214DataSetUserPassIDTableAdapters.UserIdPassTableTableAdapter();
+            UserIdPassTableTableAdapter.Fill(infosys202214DataSetUserPassID.UserIdPassTable);
+            CollectionViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("CollectionViewSource")));
+            CollectionViewSource.View.MoveCurrentToFirst();
+
+        }
+
+        public void user(object passDate, object idDate) {
+            pass = (string)passDate;
+            id = (string)idDate;
         }
     }
 }

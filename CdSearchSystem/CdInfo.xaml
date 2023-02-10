@@ -23,9 +23,9 @@
         <TextBox x:Name="url" FontSize="15"  HorizontalAlignment="Left" Height="35" Margin="180,283,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="290"/>
         <TextBox x:Name="price" FontSize="15"  HorizontalAlignment="Left" Height="35" Margin="180,432,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="290"/>
 
-        <Button Content="戻る" HorizontalAlignment="Left" Margin="395,495,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="戻る" HorizontalAlignment="Left" Margin="20,529,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         <Image x:Name="cdImage" HorizontalAlignment="Left" Height="141" Margin="15,21,0,0" VerticalAlignment="Top" Width="144"/>
-        <Button Content="保存" HorizontalAlignment="Left" Margin="47,495,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="保存" HorizontalAlignment="Left" Margin="271,490,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
 
     </Grid>
 </Window>

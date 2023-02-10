@@ -51,8 +51,9 @@ namespace CdSearchSystem {
         private void btSearch_Click(object sender, RoutedEventArgs e) {
 
             if (artistName.Text == "") {
-                MessageBox.Show("文字を入力してください");
+                check.Content = "キーワードを入力してください。";
             } else {
+                check.Content = null;
                 NameSearch();
 
                 var json = JsonConvert.DeserializeObject<Rootobject>(cdName);
@@ -112,9 +113,6 @@ namespace CdSearchSystem {
             this.Close();
         }
 
-        private void pageup_Click(object sender, RoutedEventArgs e) {
-            
-
-        }
+       
     }
 }

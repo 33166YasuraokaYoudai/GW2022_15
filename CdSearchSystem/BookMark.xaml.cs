@@ -93,5 +93,6 @@ namespace CdSearchSystem {
             CdsystemTableTableAdapter.Update(this.infosys202214DataSet.CdsystemTable);
 
         }
+
     }
 }
